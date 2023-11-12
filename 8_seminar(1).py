@@ -36,7 +36,7 @@
 #          print(find_by(phone_book, number))
 #       elif choice == 6:
 #          user_data = input('new data ')
-#          add_user(phone_book, user_data)
+#          add_user('phonebook.csv', phone_book, user_data)
 #          write_csv('phonebook.csv', phone_book)
 #       choice = show_menu()
 
@@ -61,7 +61,7 @@
 #    for line in phone_book:
 #       if str(last_name).lower() in str(line).lower():
 #          flag = 0
-#          line[2] = new_number
+#          line['Телефон'] = new_number
 #    if flag == 1:
 #       print('no name given')
 
@@ -71,7 +71,10 @@
 #    for line in phone_book:
 #       if str(last_name).lower() in str(line).lower():
 #          flag = 0
-#          list(line).clear()
+#          del line['Фамилия']
+#          del line['Имя']
+#          del line['Телефон']
+#          del line['Описание']
 #    if flag == 1:
 #       print('no name given')
 
@@ -91,7 +94,6 @@
 # def read_csv(filename):
 #    phone_book = []
 #    fields = ["Фамилия", "Имя", "Телефон", "Описание"]
-
 #    with open(filename, 'r', encoding = 'utf-8') as phb:
 #       for i in phb:
 #          record = dict(zip(fields, i.split(',')))
